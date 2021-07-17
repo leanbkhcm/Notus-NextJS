@@ -28,7 +28,7 @@ export default function Index() {
                   Tailwind CSS
                 </a>
                 . It features multiple HTML elements and it comes with dynamic
-                components for ReactJS, Vue and Angular. hello 123
+                components for ReactJS, Vue and Angular. hello
               </p>
               <div className="mt-12">
                 <a
