@@ -31,7 +31,7 @@ export default function Landing({data}) {
                   <h1 className="text-white font-semibold text-5xl">
                    hello Vietnam VN
                     {data.element_count}
-                    {data.near_earth_objects[0][0].name}
+                    
 
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
