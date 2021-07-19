@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
-export default function Landing(data) {
+export default function Landing({data}) {
   return (
     <>
       <Navbar transparent />
