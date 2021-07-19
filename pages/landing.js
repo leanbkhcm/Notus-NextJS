@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
-export default function Landing(props) {
+export default function Landing(data) {
   return (
     <>
       <Navbar transparent />
@@ -30,7 +30,7 @@ export default function Landing(props) {
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
                    hello VN
-                    {props.element_count}
+                    {data.element_count}
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
                     hello VN hello
@@ -579,7 +579,8 @@ export async function getServerSideProps(context) {
   if (!data) {
       
     return {
-      notFound: true,
+      //notFound: true,
+      "element_count":"9999"
     }
   }
 
