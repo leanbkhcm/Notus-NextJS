@@ -35,7 +35,7 @@ export default function Landing({data}) {
 
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    {data.near_earth_objects.2015-09-08[0].name}
+                    {data.near_earth_objects.['2015-09-08'][0].name}
                     hello vn 132
                     This is a simple example of a Landing Page you can build
                     using Notus NextJS. It features multiple CSS components
