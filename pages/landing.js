@@ -29,14 +29,13 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                   hello Vietnam VN 123 321
-                    {data.element_count}
+                   hello Vietnam VN 
+                    {data.total_pages}
                     
 
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    {data.near_earth_objects.['2015-09-08'][0].name}
-                    hello vn 132
+                   
                     This is a simple example of a Landing Page you can build
                     using Notus NextJS. It features multiple CSS components
                     based on the Tailwind CSS design system.
@@ -576,7 +575,9 @@ export default function Landing({data}) {
 
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY`)
+  //const res = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY`)
+  const res = await fetch(`https://api.unsplash.com/search/photos?query=canada`)
+
   const data = await res.json()
 
   if (!data) {
