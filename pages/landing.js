@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 //import api from './api/unsplash';
 import {getCuratedPhotos} from './api/unsplash';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 //import { useAlert } from 'react-alert';
 // components
@@ -10,6 +11,8 @@ import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
 export default function Landing({data}) {
+  const columnsCountBreakPoints = { 350: 1, 750: 2, 900: 3 };
+
   return (
     <>
       <Navbar transparent />
@@ -119,29 +122,50 @@ export default function Landing({data}) {
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-wrap items-center mt-32">
-        
-              <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
 
-                {data.map(function(item){
-                    return (
-                    
-                      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
-                        <img
-                          alt="..."
-                          src={item.urls.full}
-                          className="w-full align-middle rounded-t-lg"
-                        />
-                      </div>
-                  
-                      )
-                })}
+              <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
+              <Masonry columnsCount={3} gutter={4}>
+                {data.map((item) => (
+                  <img src={item.urls.full} />
+                ))}
+              </Masonry>
+              </ResponsiveMasonry>
 
-              </div>
+
 
             </div>
+
+
+
+
+            {/* <div className="flex flex-wrap items-center mt-32">     
+                <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                  {data.map(function(item){
+                      return (
+                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
+                          <img
+                            alt="..."
+                            src={item.urls.full}
+                            className="w-full align-middle rounded-t-lg"
+                          />
+                        </div>
+                        )
+                  })}
+                </div>
+            </div> */}
+
+
+
+
+         
+
+
+
+
+
+
+
           </div>
         </section>
 
