@@ -31,7 +31,7 @@ export default function Landing({data}) {
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
                    hello Vietnam  123
-                    {data.total}
+                    {/* {data.total} */}
                     
 
                   </h1>
