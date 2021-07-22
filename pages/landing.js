@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import api from './api/unsplash';
-
+import { useAlert } from 'react-alert'
 // components
 
 import Navbar from "components/Navbars/AuthNavbar.js";
@@ -597,23 +597,26 @@ export default function Landing({data}) {
 
 
 
-// export async function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   
-//   // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
-//   // const data = await res.json()
+  // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
+  // const data = await res.json()
+  const alert = useAlert();
 
-//   api.search("Canada").then((res) => {
-//     const data = res.json();
-//     if (!data) {
-      
-//       return {
-//         notFound: true,
-//       }
-//     };
-  
-//     return {
-//       props: { data }, // will be passed to the page component as props
-//     }
+  api.search("Canada").then((res) => {
+    alert.show("getServerSideProps        inside");
+    const data = res.json();
+    if (!data) {
+      alert.show("getServerSideProps        data null");
+      return {
+        notFound: true,
+      }
+    };
+    alert.show("getServerSideProps        data exist");
+    alert.show(data);
+    return {
+      props: { data }, // will be passed to the page component as props
+    }
     
-//   });
-// }
+  });
+}
