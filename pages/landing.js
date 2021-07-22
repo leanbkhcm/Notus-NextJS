@@ -30,7 +30,7 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                   hello Vietnam  
+                   hello Vietnam  99999
                     {/* {data.total} */}
                     
 
@@ -604,15 +604,15 @@ export async function getServerSideProps(context) {
   //const alert = useAlert();
 
   api.search("Canada").then((res) => {
-    console.log("res.json-----------------");
-    console.log( res.json());
+    // console.log("res.json-----------------");
+    // console.log( res.json());
     //alert.show("getServerSideProps        inside");
    
     
     
     const data = res.json();
-    console.log("data---------------");
-    console.log(data);
+    // console.log("data---------------");
+    // console.log(data);
     if (!data) {
       //alert.show("getServerSideProps        data null");
       return {
