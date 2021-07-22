@@ -125,22 +125,42 @@ export default function Landing({data}) {
                 <h3 className="text-3xl mb-2 font-semibold leading-normal">
                   Working with us is a pleasure
                 </h3>
-                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                  Don't let your uses guess by attaching tooltips and popoves to
-                  any element. Just make sure you enable them first via
-                  JavaScript.
-                </p>
-                <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
-                  The kit comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
-                  good to go. Just make sure you enable them first via
-                  JavaScript.
-                </p>
-                <Link href="/">
-                  <a href="#pablo" className="font-bold text-blueGray-700 mt-8">
-                    Check Notus NextJS!
-                  </a>
-                </Link>
+                
+
+
+                <FlatList
+                    data={data}
+                    renderItem=
+                      {({item}) => 
+                        <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
+                            
+                            <img
+                            alt="..."
+                            src={item.urls.regular}
+                            className="w-full align-middle rounded-t-lg"
+                            />
+                            <blockquote className="relative p-8 mb-4">
+                            <svg
+                              preserveAspectRatio="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 583 95"
+                              className="absolute left-0 w-full block h-95-px -top-94-px"
+                            >
+                              <polygon
+                              points="-30,95 583,95 583,65"
+                              className="text-blueGray-700 fill-current"
+                              ></polygon>
+                            </svg>
+                            
+                            </blockquote>
+                          </div>
+                        </div>
+                  
+                      }
+                />
+
+
               </div>
 
               <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
