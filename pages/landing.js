@@ -275,6 +275,35 @@ export default function Landing({data}) {
                 </p>
               </div>
             </div>
+
+
+
+
+            <div className="flex flex-wrap">
+              {data.map(function(item){
+                return (
+                <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                  <div className="px-6">
+                    <img
+                    alt="..."
+                    src={item.urls.full}
+                    className="w-full align-middle rounded-t-lg"
+                    />
+                    <div className="pt-6 text-center">
+                    <h5 className="text-xl font-bold">Ryan Tompson</h5>
+                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                      Web Developer
+                    </p>
+                    
+                    </div>
+                  </div>
+                  </div>
+                )
+              })}  
+            </div>
+
+
+
             <div className="flex flex-wrap">
               <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
                 <div className="px-6">
