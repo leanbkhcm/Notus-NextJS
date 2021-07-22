@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 //import api from './api/unsplash';
 import {getCuratedPhotos} from './api/unsplash';
-import { FlatList, Text, View } from "react-native";
 
 //import { useAlert } from 'react-alert';
 // components
@@ -129,11 +128,9 @@ export default function Landing({data}) {
                 
 
 
-                <FlatList
-                    data={data}
-                    renderItem=
-                      {({item}) => 
-                        <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                {data.map(function(item){
+                  return (
+                    <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
                             
                             <img
@@ -157,9 +154,10 @@ export default function Landing({data}) {
                             </blockquote>
                           </div>
                         </div>
-                  
-                      }
-                />
+
+                  )
+                })}
+
 
 
               </div>
