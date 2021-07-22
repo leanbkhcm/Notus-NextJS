@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import api from './api/unsplash';
+import {getCuratedPhotos} from "../api/unsplash"
+
 //import { useAlert } from 'react-alert';
 // components
 
@@ -597,33 +599,12 @@ export default function Landing({data}) {
 
 
 
-export async function getServerSideProps(context) {
-  
-  // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
-  // const data = await res.json()
-  //const alert = useAlert();
-
-  api.search("Canada").then((res) => {
-    //console.log("res.json-----------------");
-    // console.log( res.json());
-    //alert.show("getServerSideProps        inside");
-   
-    
-    
-    const data = res.json();
-    // // console.log("data---------------");
-    // // console.log(data);
-    // if (!data) {
-    //   //alert.show("getServerSideProps        data null");
-    //   return {
-    //     notFound: true,
-    //   }
-    // };
-    // //alert.show("getServerSideProps        data exist");
-    // //alert.show(data);
-    // return {
-    //   props: { data }, // will be passed to the page component as props
-    // }
-    
-  });
+export async function getServerSideProps() {
+  const data = await getCuratedPhotos();
+  console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
 }

@@ -10,3 +10,24 @@ export default {
       .then((result) => result.results);
   },
 };
+
+
+
+
+
+
+
+export const getCuratedPhotos = async (imageSearch) => {
+  const url = `${API_URL}&query=${imageSearch}`;
+  const res = await fetch(
+    url
+    // ,
+    // {
+    //   headers: {
+    //     Authorization: API_KEY,
+    //   },
+    // }
+  );
+  const responseJson = await res.json();
+  return responseJson.results;
+};
