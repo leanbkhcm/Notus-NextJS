@@ -619,7 +619,7 @@ export default function Landing({data}) {
 
 
 export async function getServerSideProps() {
-  const data = await getCuratedPhotos();
+  const data = await getCuratedPhotos("canada");
   console.log(data);
   return {
     props: {
