@@ -135,7 +135,7 @@ export default function Landing({data}) {
                             
                             <img
                             alt="..."
-                            src={item.urls.regular}
+                            src={item.urls.full}
                             className="w-full align-middle rounded-t-lg"
                             />
                             <blockquote className="relative p-8 mb-4">
