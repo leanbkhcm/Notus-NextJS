@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import api from './api/unsplash';
-import { useAlert } from 'react-alert'
+import { useAlert } from 'react-alert';
 // components
 
 import Navbar from "components/Navbars/AuthNavbar.js";
