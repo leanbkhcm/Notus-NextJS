@@ -603,7 +603,7 @@ export async function getServerSideProps(context) {
   // const data = await res.json()
 
   api.search("Canada").then((res) => {
-    const data  = await res.json();
+    const data = res.json();
     if (!data) {
       
       return {
