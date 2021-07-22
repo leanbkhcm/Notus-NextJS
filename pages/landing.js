@@ -601,30 +601,19 @@ export async function getServerSideProps(context) {
   
   // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
   // const data = await res.json()
-  const data;
+
   api.search("Canada").then((res) => {
-    data = await res.json()
-  });
-
-
-  if (!data) {
+    const data  = await res.json();
+    if (!data) {
       
+      return {
+        notFound: true,
+      }
+    };
+  
     return {
-      notFound: true,
+      props: { data }, // will be passed to the page component as props
     }
-  }
-
-  return {
-    props: { data }, // will be passed to the page component as props
-  }
-}
-
-
-
-
-api.search(this.state.imageSearch).then((images) => {
-  this.setState({
-    loading: false,
-    images,
+    
   });
-});
+}
