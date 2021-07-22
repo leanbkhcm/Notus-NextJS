@@ -118,12 +118,13 @@ export default function Landing({data}) {
             </div>
 
             <div className="flex flex-wrap items-center mt-32">
+        
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
                 <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                   <i className="fas fa-user-friends text-xl"></i>
                 </div>
                 <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                  Working with us is a pleasure
+                  Working 123
                 </h3>
                 
 
@@ -138,20 +139,7 @@ export default function Landing({data}) {
                             src={item.urls.full}
                             className="w-full align-middle rounded-t-lg"
                             />
-                            <blockquote className="relative p-8 mb-4">
-                            <svg
-                              preserveAspectRatio="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 583 95"
-                              className="absolute left-0 w-full block h-95-px -top-94-px"
-                            >
-                              <polygon
-                              points="-30,95 583,95 583,65"
-                              className="text-blueGray-700 fill-current"
-                              ></polygon>
-                            </svg>
                             
-                            </blockquote>
                           </div>
                         </div>
 
