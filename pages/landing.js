@@ -131,17 +131,11 @@ export default function Landing({data}) {
 
                 {data.map(function(item){
                   return (
-                    <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
-                            
-                            <img
-                            alt="..."
-                            src={item.urls.full}
-                            className="w-full align-middle rounded-t-lg"
-                            />
-                            
-                          </div>
-                        </div>
+                    <img
+                    alt="..."
+                    src={item.urls.full}
+                    className="w-full align-middle rounded-t-lg"
+                    />
 
                   )
                 })}
