@@ -604,8 +604,15 @@ export async function getServerSideProps(context) {
   const alert = useAlert();
 
   api.search("Canada").then((res) => {
+    console.log("res.json-----------------");
+    console.log( res.json());
     alert.show("getServerSideProps        inside");
+   
+    
+    
     const data = res.json();
+    console.log("data---------------");
+    console.log(data);
     if (!data) {
       alert.show("getServerSideProps        data null");
       return {
@@ -613,7 +620,7 @@ export async function getServerSideProps(context) {
       }
     };
     alert.show("getServerSideProps        data exist");
-    alert.show(data);
+    //alert.show(data);
     return {
       props: { data }, // will be passed to the page component as props
     }
