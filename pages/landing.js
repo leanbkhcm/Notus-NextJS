@@ -32,8 +32,8 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                   hello Vietnam  99999
-                    {/* {data.total} */}
+                   hello Vietnam  8888
+                    {data[0].id}
                     
 
                   </h1>
