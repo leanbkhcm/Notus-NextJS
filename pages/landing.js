@@ -30,7 +30,7 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                   hello Vietnam  123
+                   hello Vietnam  123 123
                     {/* {data.total} */}
                     
 
@@ -597,33 +597,33 @@ export default function Landing({data}) {
 
 
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
   
-  // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
-  // const data = await res.json()
-  const alert = useAlert();
+//   // const res = await fetch(`https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=kKUaTLCb1_-n3V4w79Clo-3m8pKstx_-6EHX1eM_QBI`)
+//   // const data = await res.json()
+//   const alert = useAlert();
 
-  api.search("Canada").then((res) => {
-    console.log("res.json-----------------");
-    console.log( res.json());
-    alert.show("getServerSideProps        inside");
+//   api.search("Canada").then((res) => {
+//     console.log("res.json-----------------");
+//     console.log( res.json());
+//     alert.show("getServerSideProps        inside");
    
     
     
-    const data = res.json();
-    console.log("data---------------");
-    console.log(data);
-    if (!data) {
-      alert.show("getServerSideProps        data null");
-      return {
-        notFound: true,
-      }
-    };
-    alert.show("getServerSideProps        data exist");
-    //alert.show(data);
-    return {
-      props: { data }, // will be passed to the page component as props
-    }
+//     const data = res.json();
+//     console.log("data---------------");
+//     console.log(data);
+//     if (!data) {
+//       alert.show("getServerSideProps        data null");
+//       return {
+//         notFound: true,
+//       }
+//     };
+//     alert.show("getServerSideProps        data exist");
+//     //alert.show(data);
+//     return {
+//       props: { data }, // will be passed to the page component as props
+//     }
     
-  });
-}
+//   });
+// }
