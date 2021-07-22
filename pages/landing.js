@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import api from './api/unsplash';
-import {getCuratedPhotos} from "../api/unsplash"
+//import api from './api/unsplash';
+import {getCuratedPhotos} from './api/unsplash';
 
 //import { useAlert } from 'react-alert';
 // components
