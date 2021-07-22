@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 //import api from './api/unsplash';
 import {getCuratedPhotos} from './api/unsplash';
+import { FlatList, Text, View } from "react-native";
 
 //import { useAlert } from 'react-alert';
 // components
