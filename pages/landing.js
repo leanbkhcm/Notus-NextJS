@@ -117,7 +117,7 @@ export default function Landing({data}) {
                     <h6 className="text-xl font-semibold">Verified Company</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Write a few lines about each one. A paragraph describing a
-                      feature will be enough. Keep you user engaged!
+                      feature will be enough. Keep you user engaged!123456789
                     </p>
                   </div>
                 </div>
@@ -126,29 +126,11 @@ export default function Landing({data}) {
 
               <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
               <Masonry columnsCount={3} gutter={4}>
-              <div className="flex flex-wrap">
-              {data.map(function(item){
-                return (
-                <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                  <div className="px-6">
-                    <img
-                    alt="..."
-                    src={item.urls.full}
-                    className="w-full align-middle rounded-t-lg"
-                    />
-                    <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Ryan Tompson 123121</h5>
-                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                      Web Developer
-                    </p>
-                    
-                    </div>
-                  </div>
-                  </div>
-                )
-              })}  
-            </div>
+                {data.map((item) => (
+                  <img src={item.urls.full} />
+                ))}
               </Masonry>
+
               </ResponsiveMasonry>
 
 
