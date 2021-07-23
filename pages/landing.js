@@ -102,7 +102,7 @@ export default function Landing({data}) {
                     <h6 className="text-xl font-semibold">Free Revisions</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.1111111111111
+                      Remember that by this time, the user is curious.2222222222
                     </p>
                   </div>
                 </div>
@@ -270,6 +270,11 @@ export default function Landing({data}) {
 
 
             <div className="flex flex-wrap">
+
+
+              {/* {data.sort((a, b) => b.height - a.height)} */}
+
+
               {data.map(function(item){
                 return (
                 <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
