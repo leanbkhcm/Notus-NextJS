@@ -16,7 +16,7 @@ import Footer from "components/Footers/Footer.js";
 
 
 
-export default function Landing() {
+export default function Landing({data}) {
   return (
     <>
       <Navbar transparent />
