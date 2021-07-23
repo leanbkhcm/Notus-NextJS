@@ -29,9 +29,11 @@ export const getCuratedPhotos = async (imageSearch) => {
     // }
   );
   const responseJson = await res.json();
-  responseJson = responseJson.results;
-  responseJson = responseJson.sort((a, b) => b.height - a.height);
-  return responseJson;
+
+
+  const tmpData = responseJson.results;
+  const result = tmpData.sort((a, b) => b.height - a.height);
+  return result;
 
   //return responseJson.results;
 };
