@@ -108,22 +108,6 @@ export default function Landing({data}) {
                 </div>
               </div>
 
-              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <Masonry columnsCount={1} >
-                  {data.map((item) => (
-                    <img src={item.urls.full} />
-                  ))}
-                </Masonry>
-              </div>
-
-
-             
-            
-
-      
-
-
-
             </div>
 
 
@@ -280,9 +264,9 @@ export default function Landing({data}) {
                 <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
                   <div className="px-6">
                     <div className="pt-6 text-center">
-                      <h5 className="text-xl font-bold"> {item.urls.full}</h5>
+                      
                       <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                        height
+                        {item.urls.full}
                       </p>
                     
                     </div>
