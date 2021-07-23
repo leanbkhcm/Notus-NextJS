@@ -598,3 +598,16 @@ export default function Landing() {
     </>
   );
 }
+
+
+
+
+export async function getServerSideProps() {
+  const data = await getCuratedPhotos("canada");
+  //console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
+}
