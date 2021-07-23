@@ -25,10 +25,10 @@ export default function Landing({data}) {
                 "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
             }}
           >
-            <span
+            {/* <span
               id="blackOverlay"
               className="w-full h-full absolute opacity-75 bg-black"
-            ></span>
+            ></span> */}
           </div>
 
 
@@ -147,7 +147,7 @@ export default function Landing({data}) {
         </section>
 
         <section className="relative py-20">
-          <div
+          {/* <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
             style={{ transform: "translateZ(0)" }}
           >
@@ -165,7 +165,7 @@ export default function Landing({data}) {
                 points="2560 0 2560 100 0 100"
               ></polygon>
             </svg>
-          </div>
+          </div> */}
 
 
      
