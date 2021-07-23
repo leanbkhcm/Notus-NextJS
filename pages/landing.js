@@ -52,7 +52,7 @@ export default function Landing({data}) {
 
 
 
-          <div
+          {/* <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-16"
             style={{ transform: "translateZ(0)" }}
           >
@@ -70,7 +70,10 @@ export default function Landing({data}) {
                 points="2560 0 2560 100 0 100"
               ></polygon>
             </svg>
-          </div>
+          </div> */}
+
+
+
         </div>
 
 
@@ -87,7 +90,7 @@ export default function Landing({data}) {
                     <h6 className="text-xl font-semibold">Awarded Agency</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Divide details about your product or agency work into
-                      parts. A paragraph describing a feature will be enough.
+                      parts. A paragraph describing a feature will be enough. hello99999999
                     </p>
                   </div>
                 </div>
