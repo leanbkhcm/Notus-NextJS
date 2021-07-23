@@ -102,14 +102,14 @@ export default function Landing({data}) {
                     <h6 className="text-xl font-semibold">Free Revisions</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.8888888888
+                      Remember that by this time, the user is curious.1111111111111
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <Masonry columnsCount={2} >
+                <Masonry columnsCount={1} >
                   {data.map((item) => (
                     <img src={item.urls.full} />
                   ))}
