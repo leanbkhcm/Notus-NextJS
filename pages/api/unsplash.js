@@ -32,7 +32,7 @@ export const getCuratedPhotos = async (imageSearch) => {
 
 
   const tmpData = responseJson.results;
-  const result = tmpData.sort((a, b) => b.height - a.height);
+  const result = tmpData.sort((a, b) => b.width - a.width);
   return result;
 
   //return responseJson.results;

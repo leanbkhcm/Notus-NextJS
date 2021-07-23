@@ -266,7 +266,7 @@ export default function Landing({data}) {
                     <div className="pt-6 text-center">
                       
                       <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                       height {item.height}
+                       width {item.width}
                       </p>
                     
                     </div>
