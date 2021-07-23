@@ -102,36 +102,25 @@ export default function Landing({data}) {
                     <h6 className="text-xl font-semibold">Free Revisions</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.
+                      Remember that by this time, the user is curious.9999999999999999
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className="fas fa-fingerprint"></i>
-                    </div>
-                    <h6 className="text-xl font-semibold">Verified Company</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      Write a few lines about each one. A paragraph describing a
-                      feature will be enough. Keep you user engaged!123456789
-                    </p>
-                  </div>
-                </div>
+                <Masonry columnsCount={3} gutter={4}>
+                  {data.map((item) => (
+                    <img src={item.urls.full} />
+                  ))}
+                </Masonry>
               </div>
 
 
-              <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
-              <Masonry columnsCount={3} gutter={4}>
-                {data.map((item) => (
-                  <img src={item.urls.full} />
-                ))}
-              </Masonry>
+             
+            
 
-              </ResponsiveMasonry>
+      
 
 
 
