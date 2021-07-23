@@ -64,7 +64,7 @@ export default function Landing() {
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-16"
             style={{ transform: "translateZ(0)" }}
           >
-            <svg
+            {/* <svg
               className="absolute bottom-0 overflow-hidden"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
@@ -77,7 +77,7 @@ export default function Landing() {
                 className="text-blueGray-200 fill-current"
                 points="2560 0 2560 100 0 100"
               ></polygon>
-            </svg>
+            </svg> */}
           </div>
         </div>
         {/* end cover pic */}
@@ -224,7 +224,7 @@ export default function Landing() {
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
             style={{ transform: "translateZ(0)" }}
           >
-            <svg
+            {/* <svg
               className="absolute bottom-0 overflow-hidden"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
@@ -237,7 +237,7 @@ export default function Landing() {
                 className="text-white fill-current"
                 points="2560 0 2560 100 0 100"
               ></polygon>
-            </svg>
+            </svg> */}
           </div>
 
           <div className="container mx-auto px-4">
@@ -472,7 +472,7 @@ export default function Landing() {
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
             style={{ transform: "translateZ(0)" }}
           >
-            <svg
+            {/* <svg
               className="absolute bottom-0 overflow-hidden"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
@@ -485,7 +485,7 @@ export default function Landing() {
                 className="text-blueGray-800 fill-current"
                 points="2560 0 2560 100 0 100"
               ></polygon>
-            </svg>
+            </svg> */}
           </div>
 
           <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
