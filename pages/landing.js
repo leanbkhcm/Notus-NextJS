@@ -251,13 +251,13 @@ export default function Landing({data}) {
           {data.map(function(item){
             return (
               <div className="items-center flex flex-wrap">
-                <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+                {/* <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
                   <img
                     alt="..."
                     className="max-w-full rounded-lg shadow-lg"
                     src={item.urls.full}
                   />
-                </div>
+                </div> */}
                 <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                   <div className="md:pr-12">
                     <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
