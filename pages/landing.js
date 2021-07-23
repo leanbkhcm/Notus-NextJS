@@ -11,11 +11,7 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 // components
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
-import React from "react";
-import Link from "next/link";
 // components
-import Navbar from "components/Navbars/AuthNavbar.js";
-import Footer from "components/Footers/Footer.js";
 
 
 
