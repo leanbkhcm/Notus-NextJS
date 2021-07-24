@@ -47,7 +47,7 @@ export default function Landing({data}) {
                     Your story starts with us.
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    Anle learning NextJs.				
+                    Anle learning NextJs.	123			
                   </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function Landing({data}) {
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
+              //xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
               version="1.1"
               viewBox="0 0 2560 100"
@@ -188,7 +188,7 @@ export default function Landing({data}) {
                   <blockquote className="relative p-8 mb-4">
                     <svg
                       preserveAspectRatio="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      // xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 583 95"
                       className="absolute left-0 w-full block h-95-px -top-94-px"
                     >
@@ -224,7 +224,7 @@ export default function Landing({data}) {
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
+              // xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
               version="1.1"
               viewBox="0 0 2560 100"
@@ -458,7 +458,7 @@ export default function Landing({data}) {
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
+              //xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
               version="1.1"
               viewBox="0 0 2560 100"
