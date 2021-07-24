@@ -44,7 +44,7 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Anle learning NextJs		
+                    Anle learning NextJs	123	
                   </h1>
                 </div>
               </div>
@@ -239,13 +239,13 @@ export default function Landing({data}) {
 
 
 
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 space-y-50">
 
 
 
           {data.map(function(item){
             return (
-              <div className="items-center flex flex-wrap space-y-100">
+              <div className="items-center flex flex-wrap">
                 <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
                   <img
                     alt="..."
