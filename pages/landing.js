@@ -47,9 +47,7 @@ export default function Landing({data}) {
                     Your story starts with us.
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    Anle learning NextJs.
-					It features multiple CSS components
-                    based on the Tailwind CSS design system.
+                    Anle learning NextJs.				
                   </p>
                 </div>
               </div>
@@ -221,7 +219,7 @@ export default function Landing({data}) {
 
         <section className="relative py-20">
           <div
-            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+            className="bottom-auto top-50 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -258,12 +256,14 @@ export default function Landing({data}) {
                     src={item.urls.full}
                   />
                 </div>
+
                 <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                   <div className="md:pr-12">
                     <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
                       <i className="fas fa-rocket text-xl"></i>
                     </div>
                     <h3 className="text-3xl font-semibold">{item.alt_description}</h3>
+                    
               
                     {/* <ul className="list-none mt-6">
                       <li className="py-2">
@@ -283,6 +283,7 @@ export default function Landing({data}) {
                     </ul> */}
                   </div>
                 </div>
+
               </div>
             )
             })} 
