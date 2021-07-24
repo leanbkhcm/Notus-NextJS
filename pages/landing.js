@@ -246,7 +246,7 @@ export default function Landing({data}) {
           {data.map(function(item){
             return (
               <div className="items-center flex flex-wrap">
-                <div className="w-full md:w-10/12 ml-auto mr-auto px-4">
+                <div className="w-full md:w-8/12 ml-auto mr-auto px-4 space-y-10">
                   <img
                     alt="..."
                     className="max-w-full rounded-lg shadow-lg"
