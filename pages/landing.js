@@ -239,7 +239,7 @@ export default function Landing({data}) {
 
 
 
-          <div className="container mx-auto px-4 space-y-50">
+          <div className="space-y-50">
 
 
 
