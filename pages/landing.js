@@ -239,13 +239,13 @@ export default function Landing({data}) {
 
 
 
-          <div className="space-y-50">
+          <div className="container mx-auto px-4 ">
 
 
 
           {data.map(function(item){
             return (
-              <div className="items-center flex flex-wrap">
+              <div className="items-center flex flex-wrap pb-20">
                 <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
                   <img
                     alt="..."
