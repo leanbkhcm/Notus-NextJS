@@ -246,7 +246,7 @@ export default function Landing({data}) {
           {data.map(function(item){
             return (
               <div className="items-center flex flex-wrap">
-                <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
+                <div className="w-full md:w-10/12 ml-auto mr-auto px-4">
                   <img
                     alt="..."
                     className="max-w-full rounded-lg shadow-lg"
@@ -254,9 +254,9 @@ export default function Landing({data}) {
                   />
 
                   <div className="md:pr-12">
-                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
+                    {/* <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
                       <i className="fas fa-rocket text-xl"></i>
-                    </div>
+                    </div> */}
                     <h3 className="text-3xl font-semibold">{item.alt_description}</h3>
                     
               
