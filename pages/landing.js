@@ -255,7 +255,7 @@ export default function Landing({data}) {
                   <img
                     alt="..."
                     className="max-w-full rounded-lg shadow-lg"
-                    src={item.urls.regular}
+                    src={item.urls.full}
                   />
                 </div>
                 <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
