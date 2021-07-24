@@ -149,7 +149,7 @@ export default function Landing({data}) {
 
 
 
-            <div className="flex flex-wrap items-center mt-32">
+            {/* <div className="flex flex-wrap items-center mt-32">
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
                 <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                   <i className="fas fa-user-friends text-xl"></i>
@@ -205,7 +205,7 @@ export default function Landing({data}) {
                   </blockquote>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -236,6 +236,24 @@ export default function Landing({data}) {
           </div>
 
 
+
+
+
+
+
+
+          <div class="p-8">
+            <div class="bg-white flex items-center rounded-full shadow-xl">
+              <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text"
+              placeholder="Search">   
+                <div class="p-4">
+                  <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                    icon
+                  </button>
+                </div>
+              </input>
+            </div>
+          </div>
 
 
 
