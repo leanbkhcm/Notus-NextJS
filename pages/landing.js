@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 //import api from './api/unsplash';
 import {getCuratedPhotos} from './api/unsplash';
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+//import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 //import { useAlert } from 'react-alert';
 
 
@@ -44,11 +44,8 @@ export default function Landing({data}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Your story starts with us.
+                    Anle learning NextJs		
                   </h1>
-                  <p className="mt-4 text-lg text-blueGray-200">
-                    Anle learning NextJs.	123			
-                  </p>
                 </div>
               </div>
             </div>
@@ -219,7 +216,7 @@ export default function Landing({data}) {
 
         <section className="relative py-20">
           <div
-            className="bottom-auto top-50 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -249,7 +246,7 @@ export default function Landing({data}) {
           {data.map(function(item){
             return (
               <div className="items-center flex flex-wrap">
-                <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+                <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                   <img
                     alt="..."
                     className="max-w-full rounded-lg shadow-lg"
