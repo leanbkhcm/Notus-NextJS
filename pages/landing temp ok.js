@@ -1,10 +1,13 @@
+import React from "react";
 import Link from "next/link";
 //import api from './api/unsplash';
 import {getCuratedPhotos} from './api/unsplash';
 //import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 //import { useAlert } from 'react-alert';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+
 
 
 // components
@@ -15,10 +18,24 @@ import Footer from "components/Footers/Footer.js";
 
 
 
-export default function Landing({prop}) {
-  const [imageSearch, setImageSearch] = useState("canada");
-  //const [data, setData] = useState();
-  const [data, setData] = useState([]);
+export default function Landing({data}) {
+
+
+
+
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     title: 'Unsplash Search',
+  //     imageSearch: '',
+  //     loading: false,
+  //     images: [],
+  //   };
+  // }
+  const [imageSearch, setImageSearch] = useState();
+
+
 
   const  imageSearchChanged = (value) =>{
     setImageSearch(value);
@@ -26,27 +43,15 @@ export default function Landing({prop}) {
 
 
 
-  const getImages = ()  => {
-    getCuratedPhotos(imageSearch)
-    .then(items => {
-      setData(items);
-    });
+  const  getImages = ()  => {
+    const tempData =  getCuratedPhotos(imageSearch);
+    console.log(tempData);
+    // return {
+    //   props: {
+    //     data
+    //   },
+    // };
   }
-
-
-
-  useEffect( () => {
-  // const result = getCuratedPhotos("canada");
-  // console.log(result);
-  // setData(result);
- 
-  getCuratedPhotos(imageSearch)
-    .then(items => {
-      setData(items);
-    })
-  }) ;
-
-
 
 
 
@@ -77,7 +82,7 @@ export default function Landing({prop}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Anle learning NextJs
+                    Anle learning NextJs pb-16
                   </h1>
                 </div>
               </div>
@@ -182,7 +187,7 @@ export default function Landing({prop}) {
 
 
 
-            <div className="flex flex-wrap items-center mt-32">
+            {/* <div className="flex flex-wrap items-center mt-32">
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
                 <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                   <i className="fas fa-user-friends text-xl"></i>
@@ -238,7 +243,7 @@ export default function Landing({prop}) {
                   </blockquote>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -284,10 +289,10 @@ export default function Landing({prop}) {
 
                   <div class="flex pb-16 w-full md:w-8/12 ml-auto mr-auto px-4">
                     <input class="w-full rounded ml-1" type="text" placeholder="Search..."
-                      onChange={(e) => imageSearchChanged(e.target.value)}
+                       onChange={(e) => imageSearchChanged(e.target.value)}
                     />
                     <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"
-                      onClick={()=>getImages()}
+                        onClick={()=>getImages()}
                     >
                       <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
                         <i class="fas fa-search"></i>
@@ -295,36 +300,42 @@ export default function Landing({prop}) {
                     </button>
                   </div>
 
-{/* 
-                <div class="pt-2 relative mx-auto text-gray-600">
-                  <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                    type="search" name="search" placeholder="Search"/>
-                  <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
-                      <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
-                        <i class="fas fa-search"></i>
-                      </span>
-                  </button>
-                </div> */}
-
-
-
-
 
 
 
                   {data.map(function(item){
                     return (
-                      <div className="items-center flex flex-wrap pb-16"  key={item.id}>
-                       
+                      <div className="items-center flex flex-wrap pb-16">
                         <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
                           <img
                             alt="..."
                             className="max-w-full rounded-lg shadow-lg"
-                            src={item.urls.regular}
+                            src={item.urls.full}
                           />
 
                           <div className="md:pr-12">
+                            {/* <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
+                              <i className="fas fa-rocket text-xl"></i>
+                            </div> */}
                             <h3 className="text-3xl font-semibold">{item.alt_description}</h3>
+                            
+                      
+                            {/* <ul className="list-none mt-6">
+                              <li className="py-2">
+                                <div className="flex items-center">
+                                  <div>
+                                    <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-100 mr-3">
+                                      <i className="fas fa-fingerprint"></i>
+                                    </span>
+                                  </div>
+                                  <div>
+                                    <h4 className="text-blueGray-500">
+                                      Carefully crafted components
+                                    </h4>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul> */}
                           </div>
 
                         </div>
@@ -646,3 +657,15 @@ export default function Landing({prop}) {
   );
 }
 
+
+
+
+export async function getServerSideProps() {
+  const data = await getCuratedPhotos("canada");
+  //console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
+}
