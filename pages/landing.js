@@ -15,7 +15,7 @@ import Footer from "components/Footers/Footer.js";
 
 
 
-export default function Landing({prop}) {
+export default function Landing() {
   const [imageSearch, setImageSearch] = useState("canada");
   //const [data, setData] = useState();
   const [data, setData] = useState([]);
@@ -77,7 +77,7 @@ export default function Landing({prop}) {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Anle learning NextJs
+                    Anle learning NextJs 123
                   </h1>
                 </div>
               </div>
@@ -282,15 +282,15 @@ export default function Landing({prop}) {
 
 
 
-                  <div class="flex pb-16 w-full md:w-8/12 ml-auto mr-auto px-4">
-                    <input class="w-full rounded ml-1" type="text" placeholder="Search..."
+                  <div className="flex pb-16 w-full md:w-8/12 ml-auto mr-auto px-4">
+                    <input className="w-full rounded ml-1" type="text" placeholder="Search..."
                       onChange={(e) => imageSearchChanged(e.target.value)}
                     />
-                    <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"
+                    <button className="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"
                       onClick={()=>getImages()}
                     >
-                      <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
-                        <i class="fas fa-search"></i>
+                      <span className="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
+                        <i className="fas fa-search"></i>
                       </span>
                     </button>
                   </div>
@@ -307,13 +307,18 @@ export default function Landing({prop}) {
                 </div> */}
 
 
+                
 
 
 
 
-
-                  {data.map(function(item){
+                  {
+                   
+                    data.length < 1 ? <h2>Empty.</h2>:
+                    data.map(function(item){
                     return (
+                      
+
                       <div className="items-center flex flex-wrap pb-16"  key={item.id}>
                        
                         <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
