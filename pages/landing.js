@@ -24,31 +24,62 @@ export default function Landing() {
   };
 
 
+// //ok
+//   const getImages = ()  => {
+//     getCuratedPhotos(imageSearch)
+//     .then(items => {
+//       setData(items);
+//       console.log("getImages-------getCuratedPhotos----------");
+//       console.log(items);
+//     });
+//   }
 
-  const getImages = ()  => {
-    getCuratedPhotos(imageSearch)
-    .then(items => {
-      setData(items);
-      console.log("getImages-----------------");
-      console.log(items);
-    });
-  }
+
+// //ok
+//   useEffect( () => {
+//   getCuratedPhotos(imageSearch)
+//     .then(items => {
+//       setData(items);
+//       console.log("items-------123----------");
+//       console.log(items);
+//     })
+//   }, [imageSearch]) ;
 
 
 
   useEffect( () => {
-  // const result = getCuratedPhotos("canada");
-  // console.log(result);
-  // setData(result);
- 
-  getCuratedPhotos(imageSearch)
-    .then(items => {
-      setData(items);
-      console.log("getCuratedPhotos-----------------");
-      console.log(items);
-    })
-  }, [imageSearch]) ;
+    fetchImageData();
+    }, [imageSearch]) ;
 
+
+
+
+    const getImages = ()  => {
+      fetchImageData();
+    }
+
+
+
+    const fetchImageData = () => {
+      //this.setState({...this.state, isFetching: true});
+      getCuratedPhotos(imageSearch)
+      .then(response => response.json())
+      .then(responseJson=> {
+        //this.setState({employees: result, isFetching: false})
+        const tmpData = responseJson.results;
+        const result = tmpData.sort((a, b) => b.width - a.width);
+        return result;
+      })
+      .then(items => {
+        setData(items);
+        console.log("items-------123----------");
+        console.log(items);
+      })
+      .catch(exception => {
+        console.log(exception);
+        //this.setState({...this.state, isFetching: false});
+      });
+    };
 
 
 
@@ -80,7 +111,7 @@ export default function Landing() {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Anle learning NextJs
+                    Anle learning NextJs 123
                   </h1>
                 </div>
               </div>
@@ -317,7 +348,7 @@ export default function Landing() {
 
                   {
                    
-                    data.length < 1 ? <h2>Empty.</h2>:
+                    
                     data.map(function(item){
                     return (
                       

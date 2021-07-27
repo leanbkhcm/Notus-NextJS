@@ -19,7 +19,7 @@ export default {
 
 export const getCuratedPhotos = async (imageSearch) => {
   const url = `${API_URL}&query=${imageSearch}`;
-  const res = await fetch(
+  return fetch(
     url
     // ,
     // {
@@ -28,12 +28,24 @@ export const getCuratedPhotos = async (imageSearch) => {
     //   },
     // }
   );
-  const responseJson = await res.json();
-
-
-  const tmpData = responseJson.results;
-  const result = tmpData.sort((a, b) => b.width - a.width);
-  return result;
-
-  //return responseJson.results;
 };
+
+
+
+
+// export const getCuratedPhotos = async (imageSearch) => {
+//   const url = `${API_URL}&query=${imageSearch}`;
+//   const res = await fetch(
+//     url
+//     // ,
+//     // {
+//     //   headers: {
+//     //     Authorization: API_KEY,
+//     //   },
+//     // }
+//   );
+//   const responseJson = await res.json();
+//   const tmpData = responseJson.results;
+//   const result = tmpData.sort((a, b) => b.width - a.width);
+//   return result;
+// };
