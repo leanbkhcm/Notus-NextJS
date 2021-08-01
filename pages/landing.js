@@ -16,8 +16,13 @@ import Footer from "components/Footers/Footer.js";
 
 
 export default function Landing() {
-  const [imageSearch, setImageSearch] = useState("canada");
+  const [count, setCount] = useState(0);
+  const [isFetching, setIsFetching] = useState(true);
+  const [isError, setIsError] = useState(false);
+  //const [errorMsg, setErrorMsg] = useState("");
+  const [imageSearch, setImageSearch] = useState("liberty");
   const [data, setData] = useState([]);
+
 
   const  imageSearchChanged = (value) =>{
     setImageSearch(value);
@@ -47,11 +52,7 @@ export default function Landing() {
 
 
 
-  useEffect( () => {
-    fetchImageData();
-    }, [imageSearch]) ;
-
-
+    useEffect( () => fetchImageData(), [] ) ;
 
 
     const getImages = ()  => {
@@ -61,9 +62,14 @@ export default function Landing() {
 
 
     const fetchImageData = () => {
-      //this.setState({...this.state, isFetching: true});
+      // setIsError(false);
+      // //setErrorMsg("");
+      // setIsFetching(true);
+      console.log("fetchImage Data with key search--------------");
+      console.log(imageSearch);
       getCuratedPhotos(imageSearch)
-      .then(response => response.json())
+      .then(response => response.json()
+      )
       .then(responseJson=> {
         //this.setState({employees: result, isFetching: false})
         const tmpData = responseJson.results;
@@ -71,13 +77,21 @@ export default function Landing() {
         return result;
       })
       .then(items => {
+        setIsError(false);
+        setIsFetching(false);
         setData(items);
-        console.log("items-------123----------");
+
+        //setErrorMsg("");
+        console.log("case get ok");
         console.log(items);
       })
       .catch(exception => {
-        console.log(exception);
-        //this.setState({...this.state, isFetching: false});
+        setIsError(true);
+        //setErrorMsg(exception.mes);
+        setIsFetching(false);
+        setData([]);
+        setCount(0);
+        console.log("case exception");
       });
     };
 
@@ -111,7 +125,7 @@ export default function Landing() {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Anle learning NextJs 123
+                    Anle learning NextJs
                   </h1>
                 </div>
               </div>
@@ -148,13 +162,13 @@ export default function Landing() {
 
 
 
-        <section className="pb-20 bg-blueGray-200 -mt-24">
+        {/* <section className="pb-20 bg-blueGray-200 -mt-24">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
 
 
 
-              {/* begin small part 1  */}
+              begin small part 1  
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
@@ -169,12 +183,12 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-              {/* end small part 1  */}
+              end small part 1 
 
 
 
 
-              {/* begin small part 2  */}
+              begin small part 2 
               <div className="w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
@@ -189,13 +203,13 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-               {/* end small part 2  */}
+               end small part 2 
             
 
 
 
 
-            {/* begin small part 3  */}
+            begin small part 3 
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
@@ -211,7 +225,7 @@ export default function Landing() {
                 </div>
               </div>
             </div>
-            {/* end small part 3  */}
+            end small part 3 
 
 
 
@@ -274,7 +288,7 @@ export default function Landing() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 
@@ -317,7 +331,7 @@ export default function Landing() {
 
 
                   <div className="flex pb-16 w-full md:w-8/12 ml-auto mr-auto px-4">
-                    <input className="w-full rounded ml-1" type="text" placeholder="Search..."
+                    <input className="w-full rounded ml-1" type="text" placeholder={imageSearch}
                       onChange={(e) => imageSearchChanged(e.target.value)}
                     />
                     <button className="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"
@@ -347,29 +361,68 @@ export default function Landing() {
 
 
                   {
-                   
-                    
-                    data.map(function(item){
-                    return (
-                      
+                  
 
-                      <div className="items-center flex flex-wrap pb-16"  key={item.id}>
-                       
-                        <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
-                          <img
-                            alt="..."
-                            className="max-w-full rounded-lg shadow-lg"
-                            src={item.urls.regular}
-                          />
+                 
+                    isError === true ?  
+                        //show when error
+                        <div className="items-center flex flex-wrap pb-16">                         
+                          <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
+                            <div className="md:pr-12">                           
+                              <h3 className="text-3xl font-semibold">
+                                <span className="max-w-full rounded-lg shadow-lg">
+                                  <i className="fas fa-exclamation-triangle"></i>
+                                </span>
+                                Error during fetch data 123
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        //end show when error
+                      :
+					  
+					  
+					          isFetching === true ?  
+                     //show when loading
+                        <div className="items-center flex flex-wrap pb-16">                         
+                          <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
+                            <div className="md:pr-12">                           
+                                <h3 className="text-3xl font-semibold">
+                                  <span className="max-w-full rounded-lg shadow-lg">
+                                  <i className="fas fa-spinner fa-spin"></i>
+                                  </span>
+                                    Loading
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        //end show when loading
+                    :
 
-                          <div className="md:pr-12">
-                            <h3 className="text-3xl font-semibold">{item.alt_description}</h3>
+                    data.map(function(item, index){
+                      //setCount(count + 1);  //caused infinitive loop
+                      return (
+                        
+
+                        <div className="items-center flex flex-wrap pb-16"  key={item.id}>
+                        
+                          <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
+                            <img
+                              alt="..."
+                              className="max-w-full rounded-lg shadow-lg"
+                              src={item.urls.regular}
+                            />
+                        
+
+                            <div className="md:pr-12">
+                              <h3 className="text-3xl font-semibold">Figure {index + 1}. {item.alt_description}
+                              </h3>
+                            </div>
+
                           </div>
 
                         </div>
-
-                      </div>
-                    )
+                      )
                     })} 
 
           </div>
