@@ -24,9 +24,16 @@ export default function Landing() {
   const [data, setData] = useState([]);
 
 
-  const  imageSearchChanged = (value) =>{
-    setImageSearch(value);
-  };
+
+  
+
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      setImageSearch(event.target.value);
+      getImages(event.target.value);
+    }
+  }
+
 
 
 // //ok
@@ -34,7 +41,7 @@ export default function Landing() {
 //     getCuratedPhotos(imageSearch)
 //     .then(items => {
 //       setData(items);
-//       console.log("getImages-------getCuratedPhotos----------");
+//       console.log("get Images-------getCuratedPhotos----------");
 //       console.log(items);
 //     });
 //   }
@@ -52,22 +59,22 @@ export default function Landing() {
 
 
 
-    useEffect( () => fetchImageData(), [] ) ;
+    useEffect( () => fetchImageData(imageSearch), [] ) ;
 
 
-    const getImages = ()  => {
-      fetchImageData();
+    const getImages = (keySearch)  => {
+      fetchImageData(keySearch);
     }
 
 
 
-    const fetchImageData = () => {
+    const fetchImageData = (keySearch) => {
       // setIsError(false);
       // //setErrorMsg("");
       // setIsFetching(true);
       console.log("fetchImage Data with key search--------------");
-      console.log(imageSearch);
-      getCuratedPhotos(imageSearch)
+      console.log(keySearch); //imageSearch
+      getCuratedPhotos(keySearch) //imageSearch
       .then(response => response.json()
       )
       .then(responseJson=> {
@@ -332,7 +339,8 @@ export default function Landing() {
 
                   <div className="flex pb-16 w-full md:w-8/12 ml-auto mr-auto px-4">
                     <input className="w-full rounded ml-1" type="text" placeholder={imageSearch}
-                      onChange={(e) => imageSearchChanged(e.target.value)}
+                    onKeyPress={(e) => handleKeyPress(e)}
+                     
                     />
                     <button className="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest"
                       onClick={()=>getImages()}
