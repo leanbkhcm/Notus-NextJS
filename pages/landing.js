@@ -16,7 +16,7 @@ import Footer from "components/Footers/Footer.js";
 
 
 export default function Landing() {
-  const [count, setCount] = useState(0);
+  //const [count, setCount] = useState(0);
   const [isFetching, setIsFetching] = useState(true);
   const [isError, setIsError] = useState(false);
   //const [errorMsg, setErrorMsg] = useState("");
@@ -90,7 +90,7 @@ export default function Landing() {
         //setErrorMsg(exception.mes);
         setIsFetching(false);
         setData([]);
-        setCount(0);
+        //setCount(0);
         console.log("case exception");
       });
     };
@@ -398,7 +398,19 @@ export default function Landing() {
                         </div>
                         //end show when loading
                     :
-
+                    data.length === 0 ?  
+                      //show when data is empty
+                      <div className="items-center flex flex-wrap pb-16">                         
+                          <div className="w-full md:w-8/12 ml-auto mr-auto px-4">
+                            <div className="md:pr-12">                           
+                                <h3 className="text-3xl font-semibold">
+                                    No data
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        //end show when data is empty
+                        :
                     data.map(function(item, index){
                       //setCount(count + 1);  //caused infinitive loop
                       return (
